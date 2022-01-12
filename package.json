@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf node_modules package-lock.json dist && npm i",
-    "build": "npm run clean && npm run build-babel",
+    "build": "npm run clean && npm run lint && npm run build-babel",
     "build-babel": "babel ./src -d ./dist",
     "dev": "nodemon -L --exec ./node_modules/.bin/babel-node -r dotenv/config  src/index.js",
     "start": "node -r dotenv/config  dist/index.js",
