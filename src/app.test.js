@@ -1,7 +1,7 @@
 import request from 'supertest'
 import app from './app'
 
-describe('Testing main route', () => {
+describe('Testing root route', () => {
   it('should return a status code 200 and a json correct', (done) => {
     request(app)
       .get('/')
