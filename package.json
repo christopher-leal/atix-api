@@ -10,7 +10,7 @@
     "dev": "nodemon -L --exec ./node_modules/.bin/babel-node -r dotenv/config  src/index.js",
     "start": "node -r dotenv/config  dist/index.js",
     "test": "jest --testTimeout=10000",
-    "test:watch": "jest --watch",
+    "test:watch": "jest --watch --testTimeout=10000",
     "docs": "jsdoc -c jsdoc.json",
     "lint":"eslint ./src"
   },
