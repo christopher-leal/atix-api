@@ -32,9 +32,9 @@ const generateHash = (message) => {
 }
 
 /**
- *
+ * Check if a hash matches with the difficulty proof of work
  * @param {string} hash Hash to check
- * @param {number} difficulty Number of zeros at the begining
+ * @param {number} difficulty Number of zeros at the beginning
  * @returns {boolean} a boolean true if the hash matches with the regex
  */
 const zerosCheck = (hash, difficulty = 2) => {
