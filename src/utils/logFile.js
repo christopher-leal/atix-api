@@ -1,4 +1,5 @@
 import fs from 'fs'
+import logger from './logger'
 
 const filename = 'logs.csv'
 
@@ -15,11 +16,13 @@ export const saveData = (data) => fs.writeFileSync(filename, data, { flag: 'a', 
  */
 export const getPrevHash = () => {
   if (!fs.existsSync(filename)) {
+    logger.warn('File doesn\'t exits')
     return '0000000000000000000000000000000000000000000000000000000000000000'
   }
   const data = fs.readFileSync(filename, { encoding: 'utf-8' })
   const lines = data.trim().split('\n')
   const prevLine = lines[lines.length - 1]
   const prevHash = prevLine.split(',')[0]
+  logger.info('Previous hash read successfully exits')
   return prevHash
 }

@@ -7,6 +7,7 @@ const saveMessage = async (req, res) => {
   const hashData = generateHash(message)
   logger.info('Hash generated successfully')
   const dataToSave = `${hashData.hash},${message},${hashData.nonce}`
+  logger.info('Data saved successfully')
   saveData(`${dataToSave} \r\n`)
   return res.status(200).json({
     success: true
